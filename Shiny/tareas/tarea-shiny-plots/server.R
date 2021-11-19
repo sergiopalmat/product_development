@@ -13,11 +13,22 @@ shinyServer(function(input, output) {
            ylab = 'Millas por galón')
     })
   
-  
+  observeEvent(input$mouse_hover,
+    {
+      output$print_clk = renderPrint({'hover'})
+      output$plot_clk = renderPlot({
+        plot(x = mtcars$wt,
+             y = mtcars$mpg,
+             xlab = 'wt',
+             ylab = 'Millas por galón')
+      })
+    }
+  )
+    
   #Render Print para verificar
-  output$print_clk = renderPrint({
-
-  })
+  #output$print_clk = renderText({
+  #  getStatus
+  #})
   
   #selección con hover
   output$tbl_hov =  renderTable({
