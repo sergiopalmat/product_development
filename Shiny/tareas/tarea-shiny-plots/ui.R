@@ -15,6 +15,8 @@ shinyUI(fluidPage(
                    brush = 'mouse_brush'
         ),
         
+        verbatimTextOutput('print_clk'),
+        
         h6('Tabla para verificar hover'),
         tableOutput('tbl_hov'),
         
