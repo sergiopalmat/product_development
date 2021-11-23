@@ -43,7 +43,7 @@ def division(array: str):
     arr = array.split(",")
     for i in range(0, len(arr)):
         arr[i] = int(arr[i])
-    result = 1
+    result = arr[0]
     for x in arr:
       result = result/x
     return result
