@@ -8,30 +8,19 @@ shinyUI(fluidPage(
     column(6,
       h3('Scatter Plot Interactivo'),
       fluidRow(
-        plotOutput('plot_clk',
+        plotOutput('plot2',
                    click = 'clk',
                    dblclick = 'dclk',
                    hover = 'mouse_hover',
                    brush = 'mouse_brush'
         ),
         
-        verbatimTextOutput('print_clk'),
+        actionButton("exclude_reset", "Reset"),
         
-        h6('Tabla para verificar hover'),
-        tableOutput('tbl_hov'),
-        
-        h6('Tabla para verificar click'),
-        tableOutput('tbl_clk'),
-        
-        h6('Tabla para verificar doble click'),
-        tableOutput('tbl_dclk'),
-        
-        h6('Tabla para verificar brush'),
-        tableOutput('tbl_brush')
       )
     ),
     column(6,
-           h3('Tabla con DT (mtcars)'),
+           h3('Tabla DT'),
            DT::dataTableOutput('tabla_dt')
     )
   )
