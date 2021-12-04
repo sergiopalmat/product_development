@@ -27,12 +27,12 @@ st.sidebar.write("""
     * Sergio Palma""")
 
 st.sidebar.markdown('---')
-st.sidebar.write("""
-    Proyecto final\n 
-    Product Development\n
-    Universidad Galileo (2021)
+st.sidebar.markdown("""
+    ###### Proyecto final\n 
+    ###### Product Development\n
+    ###### Universidad Galileo (2021)
 """)
-st.sidebar.image('images/galileo.png', width=75)
+st.sidebar.image('images/galileo.png', width=100)
 
 if menu == 'Inicio':
     set_inicio()
