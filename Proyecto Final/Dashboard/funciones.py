@@ -9,6 +9,24 @@ import plotly.express as px
 def set_inicio():
     st.title("Introducción")
 
+    st.markdown('')
+
+    st.markdown("""
+
+    #### Panorama general
+
+    La enfermedad por coronavirus (COVID-19) es una enfermedad infecciosa causada por el virus SARS-CoV-2. 
+
+    La mayoría de las personas infectadas por el virus experimentarán una enfermedad respiratoria de leve a moderada y se recuperarán sin requerir un tratamiento especial. Sin embargo, algunas enfermarán gravemente y requerirán atención médica. Las personas mayores y las que padecen enfermedades subyacentes, como enfermedades cardiovasculares, diabetes, enfermedades respiratorias crónicas o cáncer, tienen más probabilidades de desarrollar una enfermedad grave. Cualquier persona, de cualquier edad, puede contraer la COVID-19 y enfermar gravemente o morir. 
+
+    La mejor manera de prevenir y ralentizar la transmisión es estar bien informado sobre la enfermedad y cómo se propaga el virus. Protéjase a sí mismo y a los demás de la infección manteniéndose a una distancia mínima de un metro de los demás, llevando una mascarilla bien ajustada y lavándose las manos o limpiándolas con un desinfectante de base alcohólica con frecuencia. Vacúnese cuando le toque y siga las orientaciones locales. 
+
+    El virus puede propagarse desde la boca o nariz de una persona infectada en pequeñas partículas líquidas cuando tose, estornuda, habla, canta o respira. Estas partículas van desde gotículas respiratorias más grandes hasta los aerosoles más pequeños. Es importante adoptar buenas prácticas respiratorias, por ejemplo, tosiendo en la parte interna del codo flexionado, y quedarse en casa y autoaislarse hasta recuperarse si se siente mal.   
+    
+    """)
+
+    st.write("Fuente: [Organización Mundial de la Salud](https://www.who.int/es/health-topics/coronavirus#tab=tab_1)")
+
 def set_mapa():
     st.title("Distribución geográfica")
 
@@ -65,4 +83,5 @@ def set_otras_estadisticas():
 
     data_summary = data[['Year-month', 'Country/Region', 'Status','Cases']]
     data_summary = data_summary.groupby(['Year-month','Country/Region','Status'], as_index=False).sum()
+    data_summary['Year-month'] = data_summary['Year-month'].astype(str)
     st.write(data_summary[data_summary['Country/Region']=='Guatemala'])
