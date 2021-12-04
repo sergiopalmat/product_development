@@ -63,7 +63,6 @@ def set_estadisticas():
 def set_otras_estadisticas():
     st.title("Otras estadísticas")
 
-    #data['Year-month'] = data['Date'].dt.strftime('%Y-%m')
-    #data_summary = data[['Year-month', 'Country/Region', 'Status','Cases']]
-    #data_summary = data_summary.groupby(['Year-month','Country/Region','Status'], as_index=False).sum()
-    st.write(data.head())
+    data_summary = data[['Year-month', 'Country/Region', 'Status','Cases']]
+    data_summary = data_summary.groupby(['Year-month','Country/Region','Status'], as_index=False).sum()
+    st.write(data_summary[data_summary['Country/Region']=='Guatemala'])

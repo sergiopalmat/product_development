@@ -19,7 +19,7 @@ def consolidate_data(c_path, d_path, r_path):
     data = df1.append(df2)
     data = data.append(df3)
     data['Date'] = pd.to_datetime(data['Date']).dt.date
-
+    data['Year-month'] = pd.to_datetime(data['Date']).dt.to_period('M')
     return data
 
 # Define paths for reading data
