@@ -9,7 +9,7 @@ import plotly.express as px
 def set_inicio():
     st.title("Introducción")
 
-    st.markdown('')
+    st.image('images\covid-19-updates-banner-a.png')
 
     st.markdown("""
 
