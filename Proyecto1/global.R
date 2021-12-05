@@ -22,7 +22,7 @@ raw_df$shop_id <- as.factor(raw_df$shop_id)
 
 
 # FUNCIONES
-filter_helper_id <- function(parent, child, in_ops = T) {
+f_hlp_id <- function(parent, child, in_ops = T) {
   condition = rep(T, length(parent))
   if(length(child) > 0) {
     for(index in c(1:length(parent))) {
@@ -32,7 +32,7 @@ filter_helper_id <- function(parent, child, in_ops = T) {
   return(condition)
 }
 
-filter_helper_payment <- function(parent, child) {
+f_hlp_pymt <- function(parent, child) {
   condition = rep(T, length(parent))
   if(child != "Todos") {
     for(index in c(1:length(parent))) {
@@ -42,7 +42,7 @@ filter_helper_payment <- function(parent, child) {
   return(condition)
 }
 
-filter_helper_std <- function(parent, child, std) {
+f_hlp_std <- function(parent, child, std) {
   condition = rep(T, length(parent))
   if(std != "Todos") {
     for(index in c(1:length(parent))) {
@@ -52,7 +52,7 @@ filter_helper_std <- function(parent, child, std) {
   return(condition)
 }
 
-filter_dataset_summary <- function(df, std, time_range, exclude_shop_id) {
+f_ds_rsm <- function(df, std, time_range, exclude_shop_id) {
   if(is.null(time_range)|is.null(std)|is.null(exclude_shop_id)) {
     time_range = c("2019-03-01", "2019-03-31")
     std = "Todos"
@@ -63,17 +63,17 @@ filter_dataset_summary <- function(df, std, time_range, exclude_shop_id) {
   df = df %>% 
     filter(created_at_date >= time_range[1],
            created_at_date <= time_range[2],
-           filter_helper_id(shop_id, exclude_shop_id, in_ops = F)
-           )
+           f_hlp_id(shop_id, exclude_shop_id, in_ops = F)
+    )
   
   sd_value = sd(df$order_amount)
   mean_value = mean(df$order_amount)
   result = df %>%
-    filter(filter_helper_std(abs(order_amount - mean_value), sd_value, std))
+    filter(f_hlp_std(abs(order_amount - mean_value), sd_value, std))
   return(result)
 }
 
-filter_dataset_trend <- function(df, userid, shopid, payment, time_range, rm_stop = F) {
+f_ds_tnd <- function(df, userid, shopid, payment, time_range, rm_stop = F) {
   if(is.null(userid)|is.null(shopid)|is.null(payment)|is.null(time_range)) {
     time_range = c("2019-03-01", "2019-03-31")
     payment = "Todos"
@@ -86,24 +86,24 @@ filter_dataset_trend <- function(df, userid, shopid, payment, time_range, rm_sto
     userid = sapply(unlist(strsplit(userid, ",")), as.numeric)
     shopid = sapply(unlist(strsplit(shopid, ",")), as.numeric)
     
-    result <- df %>% filter(filter_helper_id(user_id, userid),
-                            filter_helper_id(shop_id, shopid),
-                            filter_helper_payment(payment_method, payment),
+    result <- df %>% filter(f_hlp_id(user_id, userid),
+                            f_hlp_id(shop_id, shopid),
+                            f_hlp_pymt(payment_method, payment),
                             created_at_date >= time_range[1],
                             created_at_date <= time_range[2]
-                            )
+    )
     return(result)
   }else{
     stop("Error de tamaño de dataset, modifique los filtros")
   }
 }
 
-filter_dataset_statistics <- function(df, userid, shopid, exclude_shopid, payment, time_range) {
+f_ds_stad <- function(df, userid, shopid, exclude_shopid, payment, time_range) {
   if(is.null(exclude_shopid)) {exclude_shopid = ""}
   exclude_shopid = sapply(unlist(strsplit(exclude_shopid, ",")), as.numeric)
-  filtered_df = filter_dataset_trend(df, userid, shopid, payment, time_range, rm_stop = T)
+  filtered_df = f_ds_tnd(df, userid, shopid, payment, time_range, rm_stop = T)
   result <- filtered_df %>%
-    filter(filter_helper_id(shop_id, exclude_shopid, in_ops = F)) %>%
+    filter(f_hlp_id(shop_id, exclude_shopid, in_ops = F)) %>%
     mutate(price_per_item = order_amount / total_items) %>%
     select(shop_id, user_id, order_amount, price_per_item, created_at_date, created_at_time)
 }
