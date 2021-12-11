@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Proyecto Final</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/font-awesome.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/templatemo-style.css">
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    
+        <div class="responsive-header visible-xs visible-sm">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="top-section">
+                            <div class="profile-image">
+                                <img src="img/profile.jfif" alt="Galileo">
+                            </div>
+                            <div class="profile-content">
+                                <h3 class="profile-title">Proyecto Final</h3>
+                                <p class="profile-description">Product Develpment</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="toggle-menu"><i class="fa fa-bars"></i></a>
+                <div class="main-navigation responsive-menu">
+                    <ul class="navigation">
+                        <li><a href="#top"><i class="fa fa-globe"></i>Información General</a></li>
+                        <li><a href="#about"><i class="fa fa-cog"></i>Instalación</a></li>
+                        <li><a href="#ejecucion"><i class="fa fa-laptop"></i>Ejecución</a></li>
+						<li><a href="#almacenamiento"><i class="fa fa-laptop"></i>Almacenamiento de Datos</a></li>
+                        <li><a href="#projects"><i class="fa fa-users"></i>Dashboard</a></li>
+						<li><a href="#contact"><i class="fa fa-users"></i>Acerca del Grupo</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- SIDEBAR -->
+        <div class="sidebar-menu hidden-xs hidden-sm">
+            <div class="top-section">
+                <div class="profile-image">
+                    <img src="img/profile.jfif" alt="Galileo">
+                </div>
+                <h3 class="profile-title">Proyecto Final</h3>
+                <p class="profile-description">Product Development</p>
+            </div> <!-- top-section -->
+            <div class="main-navigation">
+                <ul class="navigation">
+                    <li><a href="#top"><i class="fa fa-globe"></i>Información General</a></li>
+                    <li><a href="#about"><i class="fa fa-cog"></i>Instalación</a></li>
+                    <li><a href="#ejecucion"><i class="fa fa-laptop"></i>Ejecución</a></li>
+					<li><a href="#almacenamiento"><i class="fa fa-laptop"></i>Almacenamiento de Datos</a></li>
+					<li><a href="#projects"><i class="fa fa-users"></i>Dashboard</a></li>
+                    <li><a href="#contact"><i class="fa fa-users"></i>Acerca del Grupo</a></li>
+                </ul>
+            </div> <!-- .main-navigation -->
+            <div class="social-icons">
+                <ul>
+                    <li><a href="https://github.com/sergiopalmat/Product-Development"><i class="fa fa-github"></i> Repositorio</a></li>
+                    <!-- <li><a href="#"><i class="fa fa-twitter"></i></a></li> -->
+                    <!-- <li><a href="#"><i class="fa fa-linkedin"></i></a></li> -->
+                    <!-- <li><a href="#"><i class="fa fa-google-plus"></i></a></li> -->
+                    <!-- <li><a href="#"><i class="fa fa-youtube"></i></a></li> -->
+                    <!-- <li><a href="#"><i class="fa fa-rss"></i></a></li> -->
+                </ul>
+            </div> <!-- .social-icons -->
+        </div> <!-- .sidebar-menu -->
+        
+
+        <div class="banner-bg" id="top">
+            <div class="banner-overlay"></div>
+            <div class="welcome-text">
+                <h2>Proyecto Final</h2>
+                <h5>Este proyecto tiene como objetivo evaluar los conocimientos adquiridos por los estudiantes a lo largo del trimestre y consiste en automatizar el despliegue de un dashboard sobre COVID-19 a través de contenedores desarrollados con Docker e ingesta de datos con Airflow.</h5>
+				<br>
+				<h5>Los datos provistos consisten en archivos csv con información de contagios, recuperaciones y muertes por COVID-19, dados por país y región. El objetivo específico es construir un pipeline que procese los 3 archivos, los inserte en una base de datos y finalmente, a partir de dichos datos, se muestre un dashboard que permita realizar un análisis estadístico y de los insights.</h5>
+            </div>
+        </div>
+
+        <!-- MAIN CONTENT -->
+        <div class="main-content">
+            <div class="fluid-container">
+
+                <div class="content-wrapper">
+                
+                    <!-- ABOUT -->
+                    <div class="page-section" id="about">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4 class="widget-title">Instalación</h4>
+                            <p>El código para instalar el proyecto se encuentra en el repositorio, organizado de la siguiente forma:</p>
+							<br>
+							<ul>
+								<li>• <b>Dashboard</b>: carpeta que contiene todos los archivos para la ejecución del dashboard mediante Streamlit.</li>
+								<li>• <b>Airflow</b>: contiene los scripts para la creación y puesta en marcha de los flujos de ingesta, contenedores y puesta en marcha del servicio mediante FastAPI.</li>
+							</ul>
+                            <hr>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>							
+                        </div>
+                    </div> <!-- #about -->
+                    </div>
+					
+                    <!-- EJECUCION -->
+                    <div class="page-section" id="ejecucion">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4 class="widget-title">Ejecución</h4>
+                            <p>Para ejecutar el proyecto (una vez realizado el pull del código) se deben ejecutar los siguientes comandos de terminal:</p>
+							<br>
+							<ul>
+								<li>2. docker build . -t fastapi_app</li>
+								<li>3. docker-compose build</li>
+								<li>4. docker-compose up</li>
+							</ul>
+							<br>
+                            <div>
+                                <img src="img/8.png" width="90%" height="90%" alt="terminal">
+                            </div>
+							<p>Estos comandos permiten iniciar el flujo de ingesta de datos en Airflow:</p>
+							<br>
+                            <div>
+                                <img src="img/DAGs.png"width="90%" height="90%" alt="DAGS">
+                            </div>							
+                        </div>
+						<hr>
+					</div>
+                    </div> <!-- #Ejecución -->
+					
+                    <!-- ALMACENAMIENTO -->
+                    <div class="page-section" id="almacenamiento">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4 class="widget-title">Almacenamiento de Datos</h4>
+                            <p>Finalmente, el proceso lleva los datos insumo a una base de datos MySQL en tres tablas stage y una tabla final lista para ser consumida por el dashboard:</p>
+							<br>
+							<ul>
+								<li>- <b>CASES_CONFIRMEDCV19</b>: Información de los datos acumulados de casos confirmados por fecha, país y coordenadas.</li>							
+								<li>- <b>CASES_DEATHCV19</b>: Información de los datos acumulados de muertes por fecha, país y coordenadas.</li>
+								<li>- <b>CASES_RECOVEREDCV19</b>: Información de los datos acumulados de casos de recuperaciones por fecha, país y coordenadas.</li>
+								<li>- <b>CASES_CV19</b>: Información de todos los tipos de casos por fecha, país y coordenadas.</li>
+							</ul> 
+							<br>							
+							<p>Cada una de estas tablas está asociada a un endpoint en fastAPI que permite consumir los datos hacia el tablero.</p>						
+                        </div>						
+                    </div> <!-- #Almacenamiento -->
+                    </div>
+					<hr>
+					<br>                    
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+                    
+                    <!-- PROJECTS -->
+                    <div class="page-section" id="projects">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4 class="widget-title">Dashboard</h4>
+                            <p>El dashboard consiste en 4 vistas:</p>
+							<br>							
+							<ul>
+								<li>1.	<b>Inicio</b>: contiene una breve descripción sobre el COVID-19.</li>							
+								<li>2.	<b>Análisis de la distribución geográfica</b>: consiste en un mapa en el que se representa visualmente la distribución de los diferentes tipos de casos. El usuario puede seleccionar el tipo de filtro para la fecha (slider de rangos o calendario) y un seleccionar la opción del tipo o estado de caso.</li>
+								<li>3.	<b>Estadísticas de incrementos</b>: se muestra la tendencia de los casos por varios países, lo que permite identificar los incrementos o descensos a lo largo del tiempo.</li>
+								<li>4.	<b>Estadísticas adicionales</b>: se muestra el comportamiento de los casos agrupados por año y mes, así como la tendencia de la tasa de mortalidad % (calculada como la cantidad de muertes sobre el total de casos confirmados para cada periodo). El usuario puede seleccionar el país que necesita analizar.</li>
+							</ul>
+							<br>
+                            <!-- <div class="about-image"> -->
+                                <!-- <img src="img/1.jpg" alt="instalacion"> -->
+                            <!-- </div> -->
+                            <div>
+                                <img src="img/1.jpg" width="90%" height="90%" alt="dist">
+                            </div>							
+							<br>
+                            <!-- <div class="about-image"> -->
+                                <!-- <img src="img/2.jpg" alt="instalacion">	 -->
+							<!-- </div> -->
+                            <div>
+                                <img src="img/2.jpg" width="93%" height="93%" alt="instalacion">	
+							</div>							
+                        </div>
+                    </div>
+                    </div>
+                    <!-- CONTACT -->
+                    <div class="page-section" id="contact">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4 class="widget-title">Información de Grupo</h4>
+							<div>
+								<h5>Este trabajo fue realizado en conjunto por <b>Eddson Sierra, Alejandro López, Diego Martinez, Jairo Salazar y Sergio Palma</b>. El código y documentación están disponibles en: <a href="https://github.com/sergiopalmat/Product-Development"> Repositorio</a></h5>
+								
+							</div>
+                        </div>							
+                    </div>
+                    </div>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+                    <div class="row" id="footer">
+                        <div class="col-md-12 text-center">
+                            <p class="copyright-text">Copyright &copy; 2021 Universidad Galileo</p>
+                        </div>						
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <script src="js/vendor/jquery-1.10.2.min.js"></script>
+        <script src="js/min/plugins.min.js"></script>
+        <script src="js/min/main.min.js"></script>
+
+    </body>
+</html>
